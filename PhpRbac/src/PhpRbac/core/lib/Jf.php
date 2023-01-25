@@ -44,10 +44,10 @@ class Jf
 	{
 		$args = func_get_args ();
 		if (get_class ( self::$Db ) == "PDO")
-			return call_user_func_array ( "self::sqlPdo", $args );
+			return call_user_func_array ( self::class . "::sqlPdo", $args );
 		else
 			if (get_class ( self::$Db ) == "mysqli")
-				return call_user_func_array ( "self::sqlMysqli", $args );
+				return call_user_func_array ( self::class . "::sqlMysqli", $args );
 			else
 				throw new Exception ( "Unknown database interface type." );
 	}
