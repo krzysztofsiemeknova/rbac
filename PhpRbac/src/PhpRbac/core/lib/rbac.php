@@ -807,7 +807,6 @@ class RoleManager extends BaseRbac
 
 	function __construct()
 	{
-		$this->type = "roles";
 		$this->roles = new FullNestedSet ( $this->tablePrefix () . "roles", "ID", "Lft", "Rght" );
 	}
 
